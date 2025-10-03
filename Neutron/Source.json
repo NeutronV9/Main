@@ -1,5 +1,5 @@
 {
-  "moduleName": "Nebula",
+  "moduleName": "Neutron",
   "rbxhttp": false,
   "script": "dtc.schedule(game:HttpGet(\"\"))",
   "versionName": "1.0.0",
