@@ -751,21 +751,21 @@ local Module = {} do
 end
 
 task.spawn(function()
-  Neutron["24"].Activated:Connect(function()
+  Neutron["24"].MouseButton1Click:Connect(function()
     Module.get_key("https://ads.luarmor.net/get_key?for=Neutron_Linkvertise-tpQRSzhlYxZI")
   end)
 
-  Neutron["28"].Activated:Connect(function()
+  Neutron["28"].MouseButton1Click:Connect(function()
     Module.get_key("https://ads.luarmor.net/get_key?for=Neutron_Lootlabs-MosAgPwOkzqI")
   end)
 end)
 
 task.spawn(function()
-  Neutron["19"].Activated:Connect(function()
+  Neutron["19"].MouseButton1Click:Connect(function()
     Neutron["12"].Text = tostring(getclipboard())
   end)
 
-  Neutron["1d"].Activated:Connect(function()
+  Neutron["1d"].MouseButton1Click:Connect(function()
     local Key = Neutron["12"].Text
     
     Key = Key:gsub("%s+", " "):gsub("^%s*(.-)%s*$", "%1")
