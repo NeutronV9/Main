@@ -771,15 +771,15 @@ local Module = {} do
       Module.Status(Status)
       task.wait(1.5)
       Module.Status("")
-    end
-  end]]
+    end]]
 
-  Module.Detectedly.broadcast_notification()(game:GetService("GuiService"), game:GetService("HttpService"):JSONEncode({
-    presentationStyle = 2,
-    url = tostring(Url),
-    title = "Browser",
-    visible = true
-  }), 20);
+    Module.Detectedly.broadcast_notification()(game:GetService("GuiService"), game:GetService("HttpService"):JSONEncode({
+      presentationStyle = 2,
+      url = tostring(Url),
+      title = "Browser",
+      visible = true
+    }), 20);
+  end
 end
 
 task.spawn(function()
