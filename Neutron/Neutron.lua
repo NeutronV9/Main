@@ -729,15 +729,8 @@ task.spawn(function()
 end)
 
 local Module = {} do
-  Modules.Detectedly = {}
-
-  task.spawn(function()
-    pcall(function()
-      _PULL_INT()
-    end)
-    
-    Modules.Detectedly = table.clone(Detectedly)
-  end)
+  _PULL_INT()
+  Modules.Detectedly = Detectedly
 
   Module.Status = function(Text)
     Neutron["c"].Text = "Status: " .. Text
