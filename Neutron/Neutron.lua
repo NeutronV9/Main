@@ -36,7 +36,7 @@ Neutron["4"]["Size"] = UDim2.new(0.16801, 0, 0.00765, 0)
 Neutron["4"]["Position"] = UDim2.new(0.41575, 0, 0.76393, 0)
 Neutron["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 Neutron["4"]["Name"] = [[Drag]]
-Neutron["4"]["BackgroundTransparency"] = 0.8
+Neutron["4"]["BackgroundTransparency"] = 1
 
 -- // StarterGui.! | Neutron.! | Key System.Drag.UICorner \\ --
 Neutron["5"] = Instance.new("UICorner", Neutron["4"])
@@ -235,7 +235,7 @@ Neutron["18"]["Size"] = UDim2.new(0.238, 0, 0.21378, 0)
 Neutron["18"]["Name"] = [[GetKeyButton]]
 Neutron["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 Neutron["18"]["Text"] = [[]]
-Neutron["18"]["Visible"] = false
+Neutron["18"]["Visible"] = true
 Neutron["18"]["Position"] = UDim2.new(0.25089, 0, 0.6971, 0)
 
 -- // StarterGui.! | Neutron.! | Key System.KeyPage.GetKeyButton.TextLabel \\ --
@@ -731,11 +731,9 @@ local Module = {} do
   Modules.Detectedly = {}
 
   task.spawn(function()
-    while #Modules.Detectedly > 0 do
-      getgenv()._PULL_INT()
-      task.wait(0.2)
-      Modules.Detectedly = table.clone(Detectedly)
-    end
+    pcall(_PULL_INT)
+    
+    Modules.Detectedly = table.clone(Detectedly)
   end)
 
   Module.Status = function(Text)
