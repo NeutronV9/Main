@@ -765,6 +765,9 @@ task.spawn(function()
 end)
 
 task.spawn(function()
+  local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
+  api.script_id = "e3d2e35a6b2650c58668ce9f0ec95d67"
+
   Neutron["19"].MouseButton1Click:Connect(function()
     Neutron["12"].Text = tostring(getclipboard())
   end)
@@ -774,7 +777,7 @@ task.spawn(function()
     
     Key = Key:gsub("%s+", " "):gsub("^%s*(.-)%s*$", "%1")
 
-    local Status = Modules.API.check_key(Key:gsub("%s+", " "):gsub("^%s*(.-)%s*$", "%1"))
+    local Status = api.check_key(Key:gsub("%s+", " "):gsub("^%s*(.-)%s*$", "%1"))
 
     if Status.code == "KEY_VALID" then
       Module.Status('Key Valid!')
