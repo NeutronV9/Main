@@ -1,13 +1,40 @@
 repeat task.wait() until game:IsLoaded()
 
-game:GetService'StarterGui':SetCore("DevConsoleVisible", true)
-
 local Neutron = {}
 
 loadstring([[ 
   function LPH_NO_VIRTUALIZE(f) return f end;
   function LPH_JIT_MAX(f) return f end;
 ]])()
+
+local function Auth_Script()
+
+end
+
+local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
+api.script_id = "e3d2e35a6b2650c58668ce9f0ec95d67"
+
+local function IsWeekend()
+  local Day = os.date("*t").wday
+
+  return Day == 1 or Day == 7
+end
+
+if IsWeekend() then
+  task.spawn(Auth_Script)
+  return
+end
+
+if isfile("Neutron_Key.txt") then
+  local Key = readfile("Neutron_Key.txt")
+
+  local Result = api.check_key(Key)
+
+  if Result and Result.code == "KEY_VALID" then
+    task.spawn(Auth_Script)
+    return
+  end
+end
 
 LPH_NO_VIRTUALIZE(function()
 Neutron["1"] = Instance.new("ScreenGui", cloneref(gethui()))
@@ -120,7 +147,7 @@ Neutron["c"]["TextColor3"] = Color3.fromRGB(255, 255, 255)
 Neutron["c"]["BackgroundTransparency"] = 1
 Neutron["c"]["Size"] = UDim2.new(0.17257, 0, 0.09856, 0)
 Neutron["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
-Neutron["c"]["Text"] = [[Status: ]]
+Neutron["c"]["Text"] = [[]]
 Neutron["c"]["Name"] = [[KeyLabel]]
 Neutron["c"]["Position"] = UDim2.new(0.04211, 0, 0.22175, 0)
 
@@ -734,17 +761,25 @@ local Module = {} do
   Module.Detectedly = table.clone(Detectedly)
 
   Module.Status = function(Text)
-    Neutron["c"].Text = "Status: " .. Text
+    Neutron["c"].Text = Text
   end
 
-  Module.get_key = function(Url)
-    Module.Detectedly.broadcast_notification()(game:GetService("GuiService"), game:GetService("HttpService"):JSONEncode({
-      presentationStyle = 2,
-      url = Url,
-      title = "Browser",
-      visible = true
-    }), 1);
-  end
+  Module.get_key = function(Url, Status)
+    --[[local Success, Error = pcall(setclipboard, Url)
+
+    if Success then
+      Module.Status(Status)
+      task.wait(1.5)
+      Module.Status("")
+    end
+  end]]
+
+  Module.Detectedly.broadcast_notification()(game:GetService("GuiService"), game:GetService("HttpService"):JSONEncode({
+    presentationStyle = 2,
+    url = tostring(Url),
+    title = "Browser",
+    visible = true
+  }), 20);
 end
 
 task.spawn(function()
@@ -753,19 +788,16 @@ task.spawn(function()
   end)
 
   Neutron["24"].MouseButton1Click:Connect(function()
-    Module.get_key("https://ads.luarmor.net/get_key?for=Neutron_Linkvertise-tpQRSzhlYxZI")
+    Module.get_key("https://ads.luarmor.net/get_key?for=Neutron_Linkvertise-tpQRSzhlYxZI", "Copied Get Key Linkvertise Link")
   end)
 
   Neutron["28"].MouseButton1Click:Connect(function()
-    Module.get_key("https://ads.luarmor.net/get_key?for=Neutron_Lootlabs-MosAgPwOkzqI")
+    Module.get_key("https://ads.luarmor.net/get_key?for=Neutron_Lootlabs-MosAgPwOkzqI", "Copied Get Key LootLabs Link")
   end)
 end)
 
 task.spawn(function()
-  local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
-  api.script_id = "e3d2e35a6b2650c58668ce9f0ec95d67"
-
-  Neutron["19"].MouseButton1Click:Connect(function()
+  Neutron["18"].MouseButton1Click:Connect(function()
     Neutron["12"].Text = tostring(getclipboard())
   end)
 
@@ -780,7 +812,7 @@ task.spawn(function()
       Module.Status('Key Valid!')
 
       delay(0.5, function()
-        Module.Status('Loading script')
+        Module.Status('Loading.')
 			end)
 
       delay(1.5, function()
@@ -788,6 +820,8 @@ task.spawn(function()
 			end)
 
       pcall(writefile, "Neutron_Key.txt", Key)
+
+      task.spawn(Auth_Script)
     elseif Status.code == "KEY_HWID_LOCKED" then
       Module.Status('Key linked to a different HWID. Please reset it using our bot, join discord.gg/neutron-official !')
     elseif Status.code == "KEY_EXPIRED" then
