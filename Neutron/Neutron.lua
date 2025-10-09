@@ -1,3 +1,5 @@
+game:GetService'StarterGui':SetCore("DevConsoleVisible", true)
+
 local Neutron = {}
 
 loadstring([[ 
@@ -22,7 +24,7 @@ Neutron["2"]["Size"] = UDim2.new(1.3, 0, 1.3, 0)
 Neutron["2"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
 Neutron["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 Neutron["2"]["Name"] = [[! | Key System]]
-Neutron["2"]["BackgroundTransparency"] = 0.5
+Neutron["2"]["BackgroundTransparency"] = 1
 
 -- // StarterGui.! | Neutron.! | Key System.UIAspectRatioConstraint \\ --
 Neutron["3"] = Instance.new("UIAspectRatioConstraint", Neutron["2"])
@@ -36,7 +38,7 @@ Neutron["4"]["Size"] = UDim2.new(0.16801, 0, 0.00765, 0)
 Neutron["4"]["Position"] = UDim2.new(0.41575, 0, 0.76393, 0)
 Neutron["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 Neutron["4"]["Name"] = [[Drag]]
-Neutron["4"]["BackgroundTransparency"] = 1
+Neutron["4"]["BackgroundTransparency"] = 0.8
 
 -- // StarterGui.! | Neutron.! | Key System.Drag.UICorner \\ --
 Neutron["5"] = Instance.new("UICorner", Neutron["4"])
