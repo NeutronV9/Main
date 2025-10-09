@@ -1,5 +1,7 @@
 repeat task.wait() until game:IsLoaded()
 
+game:GetService'StarterGui':SetCore("DevConsoleVisible", true)
+
 local Neutron = {}
 
 loadstring([[ 
