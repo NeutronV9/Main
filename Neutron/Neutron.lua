@@ -735,7 +735,9 @@ local Module = {} do
   Modules.Detectedly = {}
 
   task.spawn(function()
-    pcall(_PULL_INT)
+    pcall(function()
+      _PULL_INT()
+    end)
     
     Modules.Detectedly = table.clone(Detectedly)
   end)
@@ -755,6 +757,10 @@ local Module = {} do
 end
 
 task.spawn(function()
+  Neutron["13"].MouseButton1Click:Connect(function()
+    Neutron["1"]:Destroy()
+  end)
+
   Neutron["24"].MouseButton1Click:Connect(function()
     Module.get_key("https://ads.luarmor.net/get_key?for=Neutron_Linkvertise-tpQRSzhlYxZI")
   end)
