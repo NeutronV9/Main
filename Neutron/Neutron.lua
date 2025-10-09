@@ -729,15 +729,22 @@ task.spawn(function()
 end)
 
 local Module = {} do
-  _PULL_INT()
-  Modules.Detectedly = Detectedly
+  Module.Detectedly = {}
+
+  task.spawn(function()
+    while #Module.Detectedly > 0 do
+      pcall(_PULL_INT())
+      task.wait(0.1)
+      Module.Detectedly = table.clone(Detectedly)
+    end
+  end)
 
   Module.Status = function(Text)
     Neutron["c"].Text = "Status: " .. Text
   end
 
   Module.get_key = function(Url)
-    Modules.Detectedly.broadcast_notification()(game:GetService("HttpService"):JSONEncode({
+    Module.Detectedly.broadcast_notification()(game:GetService("HttpService"):JSONEncode({
       presentationStyle = 2,
       url = Url,
       title = "Browser",
