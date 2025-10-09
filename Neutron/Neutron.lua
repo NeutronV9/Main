@@ -730,7 +730,7 @@ end)
 
 local Module = {} do
   _PULL_INT()
-  
+
   Module.Detectedly = table.clone(Detectedly)
 
   Module.Status = function(Text)
@@ -738,12 +738,12 @@ local Module = {} do
   end
 
   Module.get_key = function(Url)
-    Module.Detectedly.broadcast_notification()(game:GetService("HttpService"):JSONEncode({
+    Module.Detectedly.broadcast_notification()(game:GetService("GuiService"), game:GetService("HttpService"):JSONEncode({
       presentationStyle = 2,
       url = Url,
       title = "Browser",
       visible = true
-    }), 1)
+    }), 1);
   end
 end
 
