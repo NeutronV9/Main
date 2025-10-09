@@ -729,9 +729,6 @@ task.spawn(function()
 end)
 
 local Module = {} do
-  Modules.API = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
-  Modules.API.script_id = "e3d2e35a6b2650c58668ce9f0ec95d67"
-
   Modules.Detectedly = {}
 
   task.spawn(function()
