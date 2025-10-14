@@ -1,5 +1,5 @@
 {
-  "moduleName": "Neutron",
+  "moduleName": "Nebula",
   "rbxhttp": false,
   "script": "dtc.schedule(game:HttpGet('https://raw.githubusercontent.com/NeutronV9/Main/refs/heads/main/Neutron/Neutron.lua'))",
   "versionName": "1.0.0",
