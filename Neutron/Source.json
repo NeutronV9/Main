@@ -4,7 +4,7 @@
   "script": "loadstring(game:HttpGet('https://raw.githubusercontent.com/NeutronV9/Main/refs/heads/main/Neutron/Neutron.lua'))()",
   "versionName": "1.0.0",
   "roblox_versionAPK": "2.693.960",
-  "key_system": false,
+  "key_system": true,
   "ApkLink": {
     "32": "",
     "64": "https://www.mediafire.com/file/e7b6vmnleq5xwc3/Neutron+(693).apk/file",
