@@ -6,11 +6,11 @@
   "roblox_versionAPK": "2.698.941",
   "key_system": true,
   "ApkLink": {
-    "32": "https://www.mediafire.com/file/79ng069mo0k6ogw/Neutron_32Bit_698.apk/file",
-    "64": "https://www.mediafire.com/file/lbuuzmeitbeoffb/Neutron_64Bit_698.apk/file",
+    "32": "",
+    "64": "https://www.mediafire.com/file/lfnfithvc8gw78h/Neutron_64Bit_700.apk/file",
     "vng": {
-      "32": "https://www.mediafire.com/file/js3fjxn7xtylhv8/Neutron_VNG_32Bit_698.apk/file",
-      "64": "https://www.mediafire.com/file/jh342r8af959roo/Neutron_VNG_64Bit_698.apk/file"
+      "32": "",
+      "64": ""
     }
   },
   "invite_discord": "discord.gg/neutron"
