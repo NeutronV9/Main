@@ -1,5 +1,5 @@
 {
-  "moduleName": "Seliware",
+  "moduleName": "Neutron",
   "rbxhttp": false,
   "script": "task.spawn(loadstring(game:HttpGet('https://raw.githubusercontent.com/NeutronV9/Main/refs/heads/main/Neutron/Neutron.lua')))",
   "versionName": "1.0.0",
