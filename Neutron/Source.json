@@ -3,14 +3,14 @@
   "rbxhttp": false,
   "script": "task.spawn(loadstring(game:HttpGet('https://raw.githubusercontent.com/NeutronV9/Main/refs/heads/main/Neutron/Neutron.lua')))",
   "versionName": "1.1.0",
-  "roblox_versionAPK": "2.705.924",
+  "roblox_versionAPK": "2.706.750",
   "key_system": true,
   "ApkLink": {
-    "32": "https://www.mediafire.com/file/lw1iwnyqruupxvl/Neutron_32Bit_705.apk/file",
-    "64": "https://www.mediafire.com/file/ysulqyxv7xmrllr/Neutron_64Bit_705.apk/file",
+    "32": "https://www.mediafire.com/file/vd8y4cvjj00fzkf/Neutron_32Bits-2.706.750.apk/file",
+    "64": "https://www.mediafire.com/file/jcrkwod4b7ao7dn/Neutron_64Bits-2.706.750.apk/file",
     "vng": {
-      "32": "",
-      "64": ""
+      "32": "https://www.mediafire.com/file/lcd5j7jm1frfgbk/Neutron_VNG_32Bits-2.706.750.apk/file",
+      "64": "https://www.mediafire.com/file/qvi5pa4f1x8hcqm/Neutron_VNG_64Bits-2.706.750.apk/file"
     }
   },
   "invite_discord": "discord.gg/2w2jywjMP6"
